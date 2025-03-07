@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendário de Tarefas Avançado</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Orbitron&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/33d43cab80.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="calendar-container">
+    <div class="calendar-header">
+      <div class="status-bar"></div>
+      <div id="monthYear"></div>
+      <div id="digitalClock"></div>
+      <div class="navigation-buttons">
+        <button onclick="changeMonth(-1)">◀</button>
+        <button onclick="changeMonth(1)">▶</button>
+      </div>
+    </div>
+    <div class="navigation" >
+      <button class="toggle-dark-mode" onclick="toggleDarkMode()">Modo Escuro</button>
+      <button class="export-button" onclick="exportEvents()">Exportar Eventos</button>
+    </div>
+    <div class="calendar-body"></div>
+    <footer>
+      © 2025 Calendário Médico. Todos os direitos reservados.
+    </footer>
+  </div>
+
+  <div class="modal" id="eventModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-x"></i></button>
+      <h2 id="modalTitle">Gerenciar Evento</h2>
+      <input type="text" id="eventTitle" placeholder="Título do Evento">
+      <textarea id="eventDescription" placeholder="Descrição detalhada"></textarea>
+      <div class="bbbb">
+        <button onclick="saveEvent()"><i class="fa-solid fa-floppy-disk"></i> Salvar</button>
+        <button onclick="deleteEvent()" style="background-color: #ff4444; color: white; margin-top: 10px;"><i class="fa-solid fa-trash"></i> Excluir</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
